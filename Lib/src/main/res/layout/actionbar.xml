@@ -75,7 +75,7 @@
             android:visibility="gone"
             style="@style/ActionBarProgressBar"
             />
-        <com.woaigsc.utils.widget.ScrollingTextView
+        <com.woaigsc.mylib.widget.ScrollingTextView
             android:id="@+id/actionbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
