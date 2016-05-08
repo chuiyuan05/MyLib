@@ -17,11 +17,13 @@ import android.widget.Toast;
 
 import com.woaigsc.mylib.R;
 
+import java.util.LinkedList;
+
 
 /**
  * Created by chuiyuan on 16-5-6.
  */
-public class ActionBar extends RelativeLayout {
+public class ActionBar extends RelativeLayout implements View.OnClickListener{
     private LayoutInflater mInflater ;
     private RelativeLayout mBarView ;
     private ImageView mLogoView ;
@@ -44,6 +46,7 @@ public class ActionBar extends RelativeLayout {
         mBackIndicator = mBarView.findViewById(R.id.actionbar_home_is_back);
 
         mTitleView = (TextView)mBarView.findViewById(R.id.actionbar_title);
+        //Can add actions to it.
         mActionsView = (LinearLayout)mBarView.findViewById(R.id.actionbar_actions);
 
         mProgress = (ProgressBar)mBarView.findViewById(R.id.actionbar_progress);
@@ -51,12 +54,161 @@ public class ActionBar extends RelativeLayout {
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.ActionBar);
         CharSequence title = a.getString(R.styleable.ActionBar_title);
         if(title== null){
-
+            setTitle(title);
         }
         a.recycle();
     }
 
-    public void setHomeAction(){
+    @Override
+    public void onClick(View v) {
+        final Object tag = v.getTag();
+        if(tag instanceof Action){
+            final Action action = (Action)tag ;
+            action.performAction(v);
+        }
+    }
+
+    public void setHomeAction(Action action){
+        mHomeButton.setOnClickListener(this);
+        mHomeButton.setTag(action);
+        mHomeButton.setImageResource(action.getDrawable());
+        mHomeLayout.setVisibility(View.VISIBLE);
+    }
+
+    public void clearHomeAction(){
+        mHomeLayout.setVisibility(View.GONE);
+    }
+
+    /**
+     * Shows the provided logo to the left in the actionbar.
+     * This is meant to be used instead of the setHomeAction and
+     * does not show a divider to the left of the provided logo.
+     * @param resId The drawable resource id.
+     */
+    public void setHomeLogo(int resId){
+        mLogoView.setImageResource(resId);
+        mLogoView.setVisibility(View.VISIBLE);
+        mHomeLayout.setVisibility(View.GONE);
+    }
+
+    /**
+     * Emulating honeycomb
+     * @param show
+     */
+    public void setDisplayHomeAsUpEnabled(boolean show){
+        mBackIndicator.setVisibility(show? View.VISIBLE: View.GONE);
+    }
+
+    public void setTitle (CharSequence title){
+        mTitleView.setText(title);
+    }
+
+    public void setTitle(int resid){
+        mTitleView.setText(resid);
+    }
+
+    public void setProgressBarVisibility(int visibility){
+        mProgress.setVisibility(visibility);
+    }
+
+    public int getProgressBarVisibility(){
+        return mProgress.getVisibility();
+    }
+
+    public void setOnTitleClikListener(OnClickListener listener){
+        mTitleView.setOnClickListener(listener);
+    }
+
+    /**
+     * Adds a list of {@link Action}s.
+     * @param actionList
+     */
+    public void addActions(ActionList actionList){
+        int actions = actionList.size();
+        for (int i=0;i<actions;i++){
+            addAction(actionList.get(i));
+        }
+    }
+
+    /**
+     * Adds a new {@link Action}
+     * @param action
+     */
+    public void addAction(Action action){
+        final int index = mActionsView.getChildCount();
+        addAction(action, index);
+    }
+
+    /**
+     * Adds a new {@link Action} at the specified index.
+     * @param action
+     * @param index
+     */
+    public void addAction(Action action, int index){
+        mActionsView.addView(inflateAction(action), index);
+    }
+
+    /**
+     * Removes all action views from this action bar.
+     */
+    public void removeAllActions(){
+        mActionsView.removeAllViews();
+    }
+
+    /**
+     * Remove an action from the action bar.
+     * @param index
+     */
+    public void removeActionAt(int index){
+        mActionsView.removeViewAt(index);
+    }
+
+    /**
+     * Remove an action from the action bar.
+     * @param action
+     */
+    public void removeAction(Action action){
+        int childCount = mActionsView.getChildCount();
+        for(int i=0; i<childCount;i++){
+            View view = mActionsView.getChildAt(i);
+            if(view!= null){
+                final Object tag = view.getTag();
+                if(tag instanceof Action && tag.equals(action)){
+                    mActionsView.removeView(view);
+                }
+            }
+        }
+    }
+
+    /**
+     * Returns the number of actions currently registered with the action bar.
+     * @return
+     */
+    public int getActionCount(){
+        return mActionsView.getChildCount();
+    }
+
+    /**
+     * Inflates a {@link View} with the given {@link Action}.
+     * @param action
+     * @return
+     */
+    public View inflateAction(Action action){
+        View view = mInflater.inflate(R.layout.actionbar_item, mActionsView, false);
+
+        ImageButton labelView =
+                (ImageButton)view.findViewById(R.id.actionbar_item);
+        labelView.setImageResource(action.getDrawable());
+
+        view.setTag(action);
+        view.setOnClickListener(this);
+        return view;
+    }
+
+    /**
+     * A {@link LinkedList} that holds a list of {@link Action}s.
+     */
+    public static class ActionList extends LinkedList<Action>{
 
     }
 
