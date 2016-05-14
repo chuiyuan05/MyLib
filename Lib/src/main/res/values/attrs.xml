@@ -18,4 +18,8 @@
     <declare-styleable name="ActionBar">
         <attr name="title" format="string" localization="suggested" />
     </declare-styleable>
+
+    <declare-styleable name="PoemView">
+        <attr name="contentLine" format="integer"></attr>
+    </declare-styleable>
 </resources>
