@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.woaigsc.mylib.R;
+import com.woaigsc.mylib.heros.listview.ChatListViewActivity;
 import com.woaigsc.mylib.heros.listview.NotifyTest;
 import com.woaigsc.mylib.heros.listview.ScrollHideListView;
 
@@ -27,7 +28,11 @@ public class HerosMainActivity  extends AppCompatActivity{
 
     public void btnScrollHideListView(View view){
         startActivity(new Intent(this, ScrollHideListView.class));
-
     }
+
+    public void btnChatActivity(View view) {
+        startActivity(new Intent(this, ChatListViewActivity.class));
+    }
+
 
 }
