@@ -44,4 +44,5 @@ public class HerosMainActivity  extends AppCompatActivity{
         startActivity(new Intent(this, FocusListViewActivity.class));
     }
 
+    int j =0;
 }
