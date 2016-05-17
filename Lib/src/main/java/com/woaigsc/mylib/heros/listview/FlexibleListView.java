@@ -11,7 +11,7 @@ import android.widget.ListView;
  * Created by chuiyuan on 16-5-17.
  */
 public class FlexibleListView extends ListView {
-    private static int mMaxOverDistance = 50 ;
+    private static int mMaxOverDistance = 100 ;
     private Context mContext ;
 
     public FlexibleListView(Context context, AttributeSet attrs,
@@ -32,7 +32,7 @@ public class FlexibleListView extends ListView {
     private void initView(){
         DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
         float density = metrics.density ;
-        mMaxOverDistance = (int)(density*mMaxOverDistance) ;
+        //mMaxOverDistance = (int)(density*mMaxOverDistance) ;
     }
 
     @Override

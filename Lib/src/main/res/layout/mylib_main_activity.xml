@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.woaigsc.mylib.widget.ActionBar style="@style/ActionBar"></com.woaigsc.mylib.widget.ActionBar>
+    <com.woaigsc.mylib.widget.ActionBar
+        style="@style/ActionBar">
+    </com.woaigsc.mylib.widget.ActionBar>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,6 +40,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:onClick="btnFlexibleActivity"
-        android:text="FocusListView" />
+        android:text="FlexibleListView" />
 
 </LinearLayout>
