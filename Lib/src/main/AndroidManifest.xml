@@ -20,6 +20,9 @@
         <activity
             android:name=".heros.listview.FocusListViewActivity"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".heros.listview.FlexibleActivity"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 
