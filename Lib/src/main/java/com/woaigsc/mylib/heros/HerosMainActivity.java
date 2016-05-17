@@ -17,7 +17,7 @@ import com.woaigsc.mylib.heros.listview.ScrollHideListView;
  * Created by chuiyuan on 16-5-15.
  */
 public class HerosMainActivity  extends AppCompatActivity{
-
+    private static String TAG ="HerosMainActivity" ;
     @Override
     protected void onCreate(Bundle savedInstanceSate){
         super.onCreate(savedInstanceSate);
