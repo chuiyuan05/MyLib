@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.woaigsc.mylib.R;
 import com.woaigsc.mylib.heros.listview.ChatListViewActivity;
+import com.woaigsc.mylib.heros.listview.FocusListViewActivity;
 import com.woaigsc.mylib.heros.listview.NotifyTest;
 import com.woaigsc.mylib.heros.listview.ScrollHideListView;
 
@@ -34,5 +35,7 @@ public class HerosMainActivity  extends AppCompatActivity{
         startActivity(new Intent(this, ChatListViewActivity.class));
     }
 
-
+    public void btnFocusListViewActivity(View view) {
+        startActivity(new Intent(this, FocusListViewActivity.class));
+    }
 }
