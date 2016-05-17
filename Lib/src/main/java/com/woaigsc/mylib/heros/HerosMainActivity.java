@@ -43,6 +43,6 @@ public class HerosMainActivity  extends AppCompatActivity{
     public void btnFlexibleActivity(View view){
         startActivity(new Intent(this, FocusListViewActivity.class));
     }
-
+    int i=0;
 
 }
