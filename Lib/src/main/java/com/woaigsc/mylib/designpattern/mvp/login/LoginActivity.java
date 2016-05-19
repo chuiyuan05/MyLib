@@ -1,4 +1,4 @@
-package com.woaigsc.mylib.designpattern.mvp;
+package com.woaigsc.mylib.designpattern.mvp.login;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,9 +10,9 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.woaigsc.mylib.R;
-import com.woaigsc.mylib.designpattern.mvp.presenter.ILoginPresenter;
-import com.woaigsc.mylib.designpattern.mvp.presenter.LoginPresenterImpl;
-import com.woaigsc.mylib.designpattern.mvp.view.ILoginView;
+import com.woaigsc.mylib.designpattern.mvp.login.presenter.ILoginPresenter;
+import com.woaigsc.mylib.designpattern.mvp.login.presenter.LoginPresenterImpl;
+import com.woaigsc.mylib.designpattern.mvp.login.view.ILoginView;
 
 /**
  * Created by chuiyuan on 16-5-19.
@@ -79,7 +79,15 @@ public class LoginActivity extends AppCompatActivity implements ILoginView{
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mLoginPresenter.onDestroy();
+    }
+
+    @Override
     public void onSetProgressBarVisible(int visible) {
         mProgressBar.setVisibility(visible);
     }
+
+
 }

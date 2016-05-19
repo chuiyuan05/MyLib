@@ -24,7 +24,7 @@
             android:name=".heros.listview.FlexibleActivity"
             android:screenOrientation="portrait"></activity>
 
-        <activity android:name=".designpattern.mvp.LoginActivity"
+        <activity android:name=".designpattern.mvp.login.LoginActivity"
             android:screenOrientation="portrait"></activity>
 
     </application>

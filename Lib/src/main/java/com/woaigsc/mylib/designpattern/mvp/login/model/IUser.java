@@ -1,4 +1,4 @@
-package com.woaigsc.mylib.designpattern.mvp.model;
+package com.woaigsc.mylib.designpattern.mvp.login.model;
 
 /**
  * Created by chuiyuan on 16-5-19.

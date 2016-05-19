@@ -1,11 +1,11 @@
-package com.woaigsc.mylib.designpattern.mvp.presenter;
+package com.woaigsc.mylib.designpattern.mvp.login.presenter;
 
 import android.os.Handler;
 import android.os.Looper;
 
-import com.woaigsc.mylib.designpattern.mvp.model.IUser;
-import com.woaigsc.mylib.designpattern.mvp.model.UserModel;
-import com.woaigsc.mylib.designpattern.mvp.view.ILoginView;
+import com.woaigsc.mylib.designpattern.mvp.login.model.IUser;
+import com.woaigsc.mylib.designpattern.mvp.login.model.UserModel;
+import com.woaigsc.mylib.designpattern.mvp.login.view.ILoginView;
 
 /**
  * Created by chuiyuan on 16-5-19.
@@ -41,6 +41,11 @@ public class LoginPresenterImpl implements ILoginPresenter {
     @Override
     public void setProgressBarVisible(int visible) {
         iLoginView.onSetProgressBarVisible(visible);
+    }
+
+    @Override
+    public void onDestroy() {
+        iLoginView = null;//Release Activity.
     }
 
     private void initUser(){

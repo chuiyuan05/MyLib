@@ -1,4 +1,4 @@
-package com.woaigsc.mylib.designpattern.mvp.view;
+package com.woaigsc.mylib.designpattern.mvp.login.view;
 
 /**
  * Created by chuiyuan on 16-5-19.
