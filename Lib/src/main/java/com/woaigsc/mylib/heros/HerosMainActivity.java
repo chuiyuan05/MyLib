@@ -43,5 +43,5 @@ public class HerosMainActivity  extends AppCompatActivity{
     public void btnFlexibleActivity(View view){
         startActivity(new Intent(this, FlexibleActivity.class));
     }
-
+    //this is second in dev
 }
