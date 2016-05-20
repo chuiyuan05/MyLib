@@ -27,6 +27,8 @@
         <activity android:name=".designpattern.mvp.login.LoginActivity"
             android:screenOrientation="portrait"></activity>
 
+        <activity android:name=".designpattern.mvp.outeradapter.AdapterActivityA"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
