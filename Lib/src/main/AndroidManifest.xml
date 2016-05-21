@@ -29,6 +29,9 @@
 
         <activity android:name=".designpattern.mvp.outeradapter.AdapterActivityA"
             android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".designpattern.mvp.evenbus.EventBusActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
