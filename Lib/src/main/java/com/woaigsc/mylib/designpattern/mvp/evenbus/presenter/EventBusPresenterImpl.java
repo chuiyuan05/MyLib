@@ -16,8 +16,8 @@ import de.greenrobot.event.EventBus;
  * Created by chuiyuan on 16-5-20.
  */
 public class EventBusPresenterImpl implements IEventBusPresenter{
-    List<String> datas ;
     IEventBusView iEventBusView;
+    final List<String> datas = new ArrayList<>();
 
     public EventBusPresenterImpl(IEventBusView iEventBusView){
         this.iEventBusView = iEventBusView ;
@@ -27,7 +27,6 @@ public class EventBusPresenterImpl implements IEventBusPresenter{
     public void loadDatas() {
         //String [] countries = iEventBusView.getActivity().getResources().getStringArray();
         String[] countries = new String[]{"Kaede Akatsuki","Loves","Neko Tattsun","Deeply"};
-        datas = new ArrayList<>();
         for(String item :countries){
             datas.add(item);
         }

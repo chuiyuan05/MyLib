@@ -105,6 +105,14 @@ public class ActionBar extends RelativeLayout implements View.OnClickListener {
         mTitleView.setText(title);
     }
 
+    /**
+     * Add for setting font.
+     * @return
+     */
+    public TextView getTitleView(){
+        return mTitleView;
+    }
+
     public void setTitle(int resid) {
         mTitleView.setText(resid);
     }

@@ -24,8 +24,8 @@ public class ActivityPresenterImpl implements IActivityPresenter {
                 new Runnable() {
                     @Override
                     public void run() {
-                        GetDatasEvent getDatasEvent = new GetDatasEvent(datas);
-                        EventBus.getDefault().post(getDatasEvent);
+                        //GetDatasEvent getDatasEvent = new GetDatasEvent("fuck");
+                        //EventBus.getDefault().post(getDatasEvent);
                     }
                 }, 1000);
     }
