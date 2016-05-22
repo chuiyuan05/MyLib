@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Utils</string>
+    <string name="MyLib">MyLib</string>
     <string name="actionbar_activity_not_found">Failed to open intent...</string>
 </resources>

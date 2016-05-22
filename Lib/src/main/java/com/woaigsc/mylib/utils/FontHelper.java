@@ -42,17 +42,26 @@ public class FontHelper {
     }
 
     /**
+     * This is time consuming, so you can init it in AppStart in a single
+     * Thread.
      * @param fontName The font you want to init.
      */
-    private void initFont(String fontName){
+    public void initFont(String fontName){
         Typeface typeface = Typeface.createFromAsset(mAssetManager,"fonts/"+fontName);
         FONT_MAP.put(fontName,typeface);
     }
 
     /**
-     * Get font by fontName. If the no font was initiated, return
-     * FONT_FIRST by default. If the font you want to use was not initiated,
-     * init it now, and return.
+     * Init the default font.
+     */
+    public void initDefaultFont(){
+        initFont(FONT_FIRST);
+    }
+
+    /**
+     * Get font by fontName. If the no font was initiated, it will initiates
+     * the font and return FONT_FIRST by default. If the font you want to use
+     * was not initiated, init it now, and return.
      * @param fontName The font you want to use for this time.
      * @return
      */
@@ -107,6 +116,18 @@ public class FontHelper {
      */
     public void setDefaultFont(ViewGroup viewGroup){
         setFont(viewGroup, FONT_FIRST);
+    }
+
+    /**
+     * The fonts in use should be as less as possible.
+     * @param fontName
+     */
+    public void removeFont(String fontName){
+        FONT_MAP.remove(fontName);
+    }
+
+    public void clearFonts(){
+        FONT_MAP.clear();
     }
 
 }
