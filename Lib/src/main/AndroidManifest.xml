@@ -5,31 +5,31 @@
         android:allowBackup="true"
         android:supportsRtl="true">
 
-        <activity android:name="com.woaigsc.mylib.heros.HerosMainActivity"
+        <activity android:name="com.woaigsc.mylib1.heros.HerosMainActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name="com.woaigsc.mylib.heros.listview.NotifyTest"
+        <activity android:name="com.woaigsc.mylib1.heros.listview.NotifyTest"
             android:screenOrientation="portrait"></activity>
-        <activity android:name="com.woaigsc.mylib.heros.listview.ScrollHideListView"
-            android:screenOrientation="portrait"></activity>
-
-        <activity
-            android:name=".heros.listview.ChatListViewActivity"
+        <activity android:name="com.woaigsc.mylib1.heros.listview.ScrollHideListView"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".heros.listview.FocusListViewActivity"
+            android:name="com.woaigsc.mylib1.heros.listview.ChatListViewActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="com.woaigsc.mylib1.heros.listview.FocusListViewActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".heros.listview.FlexibleActivity"
+            android:name="com.woaigsc.mylib1.heros.listview.FlexibleActivity"
             android:screenOrientation="portrait"></activity>
 
-        <activity android:name=".designpattern.mvp.login.LoginActivity"
+        <activity android:name="com.woaigsc.mylib1.designpattern.mvp.login.LoginActivity"
             android:screenOrientation="portrait"></activity>
 
-        <activity android:name=".designpattern.mvp.outeradapter.AdapterActivityA"
+        <activity android:name="com.woaigsc.mylib1.designpattern.mvp.outeradapter.AdapterActivityA"
             android:screenOrientation="portrait"></activity>
 
-        <activity android:name=".designpattern.mvp.evenbus.EventBusActivity"
+        <activity android:name="com.woaigsc.mylib1.designpattern.mvp.evenbus.EventBusActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

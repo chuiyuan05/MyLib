@@ -25,7 +25,7 @@ public class MyGridView extends GridView {
     }
     /**
      * If set true, it will show all the children and
-     * disable to scroll.
+     * disable the scroll.
      * @param expandable
      */
     public void setExpandable(boolean expandable){

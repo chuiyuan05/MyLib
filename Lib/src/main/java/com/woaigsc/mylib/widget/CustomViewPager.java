@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- *
+ * Can set to disable scrolling.
  * Created by chuiyuan on 16-5-8.
  */
 public class CustomViewPager extends ViewPager {
